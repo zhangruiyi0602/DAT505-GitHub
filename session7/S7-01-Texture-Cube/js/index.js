@@ -1,10 +1,10 @@
 //Setup the global variables
 var camera, scene, renderer, geometry, material, mesh;
 var texture;
-var cubesNum=10;
+var cubesNum = 10;
 
-var cubes=[];
-var speed=[];
+var cubes = [];
+var speed = [];
 
 function init() {
 	// Create a scene
@@ -12,28 +12,33 @@ function init() {
 
 	// Create a geometry
 	// 	Create a box (cube) of 10 width, length, and height
-	geometry = new THREE.BoxGeometry(2, 2, 2);
+	geometry = new THREE.BoxGeometry( 5, 5, 5 );
 
-	for (let i=0; i<cubesNum;i++){
-		let randomValue=Math.random() * 0.5;
+	for (var i = 0; i < cubesNum; i++){
+		var randomValue = Math.random() * 0.5;
 		speed.push(randomValue);
 
-		let randomSelection = Math.round(Math.random()*13)+1;//(random*texturenumber-2)+1
-
+		//Generate a random number from 1 to 4(according to the image files)
+		var randomSelection = Math.round(Math.random()*10)+1;//(random*texturenumber-2)+1;
+		//load a Texture
+		texture = new THREE.TextureLoader().load("textures/texture" + randomSelection +".jpg");
 
 	// Load a texture
-	texture = new THREE.TextureLoader().load( "textures/texture"+randomSelection+".jpg");
+//	texture = new THREE.TextureLoader().load( "texture.jpg" );
 
 	// Create a MeshBasicMaterial with a loaded texture
 	material = new THREE.MeshBasicMaterial( { map: texture} );
 
 	// Combine the geometry and material into a mesh
 	mesh = new THREE.Mesh( geometry, material );
-	mesh.position.y=Math.random()*30;
+	mesh.position.y = Math.random()*30;
+	//mesh.position.x = 0;
+
 	// Add the mesh to the scene
-	scene.add( mesh );
+  scene.add(mesh);
   cubes.push(mesh);
 }
+
 	// Create a camera
 	// 	Set a Field of View (FOV) of 75 degrees
 	// 	Set an Apsect Ratio of the inner width divided by the inner height of the window
@@ -41,7 +46,7 @@ function init() {
 	//	Set the 'Far' (draw distance) at which objects will not be rendered to 1000
 	camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 2, 1000 );
 	// Move the camera 'out' by 30
-	camera.position.z = 20;
+	camera.position.z = 30;
 
 	// Create a WebGL Rendered
 	renderer = new THREE.WebGLRenderer();
@@ -58,23 +63,36 @@ function animate() {
 	requestAnimationFrame( animate );
 
 	for (var i=0; i<cubesNum; i++){
-		cubes[i].rotation.x +=0.02;
-		cubes[i].rotation.y +=0.01;
-		cubes[i].position.y -=0.1;
+	  cubes[i].rotation.x += 0.02;
+		cubes[i].rotation.y += 0.01;
+		cubes[i].position.y -= 0.1;
 
-
-	if (cubes[i].position.y <- 30){
+ if (cubes[i].position.y< -30){
 		cubes[i].position.y = 35;
-		cubes[i].position.x = (Math.random() * -20) +10;
-			cubes[i].scale.x = (Math.random() * -2) +1;
-			cubes[i].scale.y = (Math.random() * -2) +1;
-			cubes[i].scale.z = (Math.random() * -2) +1;
+		cubes[i].position.x = (Math.random() * -20)+10;
+		cubes[i].scale.y = (Math.random() * -2)+1;
+		cubes[i].scale.x = (Math.random() * -2)+1;
+		cubes[i].scale.z = (Math.random() * -2)+1;
+
+	// Rotate the x position of the mesh by 0.03
+/*	mesh.rotation.x += 0.02;
+	// Rotate the y position of the mesh by 0.02
+	mesh.rotation.y += 0.01;
+
+	//Move the mesh towards the bottom of the screen
+	mesh.position.y -= 0.2;*/
+
+	//If the mesh passes the bottom of the screen,
+	//make it appear on the top. Also x position is randomized
+/*	if (mesh.position.y <- 30){
+		mesh.position.y = 35;
+		mesh.position.x = (Math.random() * -20) +10;*/
 	}
 }
-
 	// Render everything using the created renderer, scene, and camera
 	renderer.render( scene, camera );
 }
+
 
 init();
 animate();
