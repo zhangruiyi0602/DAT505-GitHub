@@ -11,7 +11,7 @@ Classroom practice:Make the size, direction and speed of the cuboid drop freely 
 <script src="js/libs/stats.min.js"></script>
 ```
 This code is to let the number of cubes and speed random
-```html
+```javascript
 for (var i = 0; i < cubesNum; i++){
   var randomValue = Math.random() * 0.5;
   speed.push(randomValue);
@@ -22,7 +22,7 @@ The code means attach maps to objects ,generate a random number from 1 to 12 acc
   texture = new THREE.TextureLoader().load("textures/texture" + randomSelection +".jpg");
 ```
 The code means modify UVs to accommodate MatCap texture
-```html
+```javascript
 var faceVertexUvs = geometry.faceVertexUvs[ 0 ];
 for ( i = 0; i < faceVertexUvs.length; i ++ ) {
   var uvs = faceVertexUvs[ i ];
@@ -32,7 +32,8 @@ for ( i = 0; i < faceVertexUvs.length; i ++ ) {
     uvs[ j ].y = face.vertexNormals[ j ].y * 0.5 + 0.5;
     ```
 This code is to control the eyes to follow the movement of the mouse to move
-    ```html
+
+```javascript
     renderer = new THREE.WebGLRenderer();
     renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setSize( window.innerWidth, window.innerHeight );

@@ -12,7 +12,7 @@ Homework:Import the 3DMax model and use the loop cycle. Click on the  model to c
 <script src="build/MTLLoader.js"></script>
 ```
 This code is to implement loop loop, make the object's position, Angle, rotation direction random. Import OBJ and MTL about model in 3D Max.
-```html
+```javascript
 var mtlLoader = new THREE.MTLLoader();
 mtlLoader.load("bee.mtl", function(materials){
 
@@ -35,7 +35,8 @@ mtlLoader.load("bee.mtl", function(materials){
       ```
 
 This code means  the superposition of two sets
-      ```html
+
+```javascript
       var intersects = raycaster.intersectObjects( objects, true );
 
       if ( intersects.length > 0 ) {

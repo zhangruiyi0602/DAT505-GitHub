@@ -11,7 +11,7 @@ Homework:My homework extended that by making a wireframe object that rotates aro
 <script src="js/three.js"></script>
 ```
 The following code create a Cube Mesh with basic material,this is the code for making the heart shape,heart colour ,the position of the shape andContinuously rotate the mesh.
-```html
+```javascript
 function geometry(){
   var x = 0, y =0;
 var heartShape = new THREE.Shape();
@@ -38,7 +38,7 @@ mesh.rotation.z += 0.05;
 mesh1.rotation.x += 0.05;
 ```
 This code specifies that the object should be in wireframe mode.
-```html
+```javascript
 geometry13 = new THREE.IcosahedronGeometry( 150,1 );
 material13 = new THREE.MeshBasicMaterial( {wireframe : true} );
 mesh13 = new THREE.Mesh( geometry13, material13 );

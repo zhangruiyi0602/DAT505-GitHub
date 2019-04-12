@@ -11,22 +11,25 @@ Homework:The homework is to make a row of cuboids move at different speeds and r
 ```html
 <script src="build/three.min.js"></script>
 <script src="js/OrbitControls.js"></script>
-```
+
+```javascript
 This code create a two dimensional grid of objects, and position them accordingly and use For cycle to start from -35 and sequentially add one every 5 pixels
-```html
+```javascript
  for (var x = -35; x < 40; x += 5) {
  for (var y = -35; y < 40; y += 5) {
 ```
 
-
 This code means the position and rot of the mesh are math random.
-```html
-var boxMaterial = new THREE.MeshLambertMaterial({color:Math.random()* 0xFFFFFF});
+
+
+```javascript
+
+var boxMaterial = javascriptnew THREE.MeshLambertMaterial({color:Math.random()* 0xFFFFFF});
 ```
 
 This code means for Each takes all the array entries and passes the c as the object, and i as the indexcubes.forEach(function(c, i)
 c.rotation.x = rot; Rotate the object that is referenced in c
-```html
+```javascript
 function drawFrame(){
   requestAnimationFrame(drawFrame);
   rot+=0.01;

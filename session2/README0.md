@@ -10,7 +10,7 @@ Homework:In my homework, I changed the partial squares into circles on the basis
 <script src="js/three.min.js"></script>
 ```
 This code  create a basic perspective camera and  configure lights.
-```html
+```javascript
 camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 300, 10000 );
 var light1 = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(light1);
@@ -18,7 +18,7 @@ var light2 = new THREE.PointLight(0xffffff, 0.5);
 scene.add(light2);
 ```
 This code allows objects to be labeled with textures.
-```html
+```javascript
 var texture=new THREE.TextureLoader().load("texture/colors.png");
 var material3= new THREE.MeshBasicMaterial({map:texture});
 ```

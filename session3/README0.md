@@ -12,7 +12,7 @@ Homework:My assignment was to replace the square with a quadrangle and a polyhed
 ```
 
 This code is the original size, speed and position of the object.
-```html
+```javascript
 var controller = new function() {
   this.scaleX = 5;
   this.scaleY = 5;
@@ -28,7 +28,7 @@ var controller = new function() {
 }
 ```
 This code means you can  adjust the position, direction and color of the X-axis, Y-axis and Z-axis of the square in the GUI.
-```html
+```javascript
 var gui = new dat.GUI();
 
 var f1 = gui.addFolder('Scale');
@@ -213,7 +213,7 @@ mesh16.rotation.z = de2ra(controller.rotationZ);
 ```
 
 This code means the rotation of the original objects in X axis,Y axis and Z axis.
-```html
+```javascript
 var render = function () {
 requestAnimationFrame( render );
 
