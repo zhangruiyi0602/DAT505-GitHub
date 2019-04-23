@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>three.js</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<style>
+		body {
+			background-color: #fff;
+			color: #111;
+			margin: 0px;
+			overflow: hidden;
+			font-family: Monospace;
+			font-size: 13px;
+		}
+
+		#info {
+			position: absolute;
+			top: 0px;
+			width: 100%;
+			padding: 5px;
+			text-align: center;
+		}
+
+		a {
+			color: #0080ff;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: #f00;
+		}
+
+		#footer {
+			width: 100%;
+			margin: 2em auto;
+			text-align: center;
+			position: absolute;
+			bottom: 0
+		}
+
+		strong {
+			color: red
+		}
+
+		.btn-music {
+			position: absolute;
+			top: 1rem;
+			left: 1rem;
+			width: 3rem;
+			height: 3rem;
+			background: url("images/music.png") center center/70% no-repeat;
+			cursor: pointer
+		}
+
+		.music-off {
+			background: url("images/stop.png") center center/60% no-repeat
+		}
+	</style>
+	<audio class="music" src="music/xianhe.mp3"></audio>
+	<a class="btn-music"></a>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+	<div id="container"></div>
+	<div class="anit">
+		<!-- 载入brid 更改路径就行 -->
+		<img src="images/brid.png" alt="" class="anitBrid">
+
+
+		<div class="weui-progress">
+			<div class="weui-progress__bar">
+				<div class="weui-progress__inner-bar js_progress" style="width: 80%;"></div>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.3.1.min.js"></script>
+
+	<script src="build/three.js"></script>
+	<script src="build/WebGL.js"></script>
+	<script src="build/stats.min.js"></script>
+	<script src="build/GLTFLoader.js"></script>
+	<script src="js/OrbitControls.js"></script>
+	<script src="js/index.js"></script>
+	<script>
+	</script>
+</body>
+
+</html>
